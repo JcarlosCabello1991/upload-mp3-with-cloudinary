@@ -34,6 +34,7 @@ app.post("/audio/upload", async (req, res) => {
     (error, result) => {
       if (error) res.status(500).json(error);
       else {
+        console.log(result.duration)
         res.status(200).json({fileUrl: result.secure_url});
       }
     }
